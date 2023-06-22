@@ -19,9 +19,10 @@ func New() *MemoryProductRepository {
 	}
 }
 
-func (m *MemoryProductRepository) GetAll() ([]aggregate.Product, error) {
+func (mpr *MemoryProductRepository) GetAll() ([]aggregate.Product, error) {
+	// Collect all Products from map
 	var products []aggregate.Product
-	for _, product := range m.products {
+	for _, product := range mpr.products {
 		products = append(products, product)
 	}
 	return products, nil
